@@ -1,6 +1,6 @@
 {
     "name": "testhm1",
-    "version": "1.6.6",
+    "version": "1.6.9",
     "description": "a imui plugin for react native application",
     "main": "index.js",
 
@@ -19,8 +19,11 @@
         "url": "https://github.com/jpush/jpush-react-native/issues"
     },
     "files": [
-        "./iOS"
-        "./Android"
+        "iOS/IMUICommon",
+        "iOS/IMUIInputView",
+        "iOS/IMUIMessageCollectionView",
+        "RNTAuroraIMUI/",
+        "Android/"
     ],
     "homepage": "https://github.com/jpush/jpush-react-native#readme",
     "rnpm": {
