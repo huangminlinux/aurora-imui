@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-public protocol IMUIMessageStatusViewProtocal {
+@objc public protocol IMUIMessageStatusViewProtocal: NSObjectProtocol {
   // outGoing message
   func layoutFailedStatus()
   func layoutSendingStatus()
@@ -22,12 +22,12 @@ public protocol IMUIMessageStatusViewProtocal {
   var statusViewID: String { get }
 }
 
-public extension IMUIMessageStatusViewProtocal {
-  func layoutFailedStatus() {}
-  func layoutSendingStatus() {}
-  func layoutSuccessStatus() {}
-  func layoutMediaDownloading() {}
-  func layoutMediaDownloadFail(){}
-  
-  var statusViewID: String { return "" }
-}
+//public extension IMUIMessageStatusViewProtocal {
+//  func layoutFailedStatus() {}
+//  func layoutSendingStatus() {}
+//  func layoutSuccessStatus() {}
+//  func layoutMediaDownloading() {}
+//  func layoutMediaDownloadFail(){}
+//  
+//  var statusViewID: String { return "" }
+//}

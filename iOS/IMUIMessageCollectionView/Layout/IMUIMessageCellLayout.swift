@@ -14,7 +14,7 @@ import UIKit
  *  'IMUIMessageCellLayoutProtocal' protocol.
  *  each IMUIMessageBaseCell need IMUIMessageCellLayoutProtocal to layout cell's items
  */
-open class IMUIMessageCellLayout: IMUIMessageCellLayoutProtocal {
+open class IMUIMessageCellLayout: NSObject, IMUIMessageCellLayoutProtocal {
 
   public static var avatarSize: CGSize = CGSize(width: 40, height: 40)
   

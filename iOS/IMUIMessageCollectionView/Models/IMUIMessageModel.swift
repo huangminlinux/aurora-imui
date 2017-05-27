@@ -19,7 +19,7 @@ public enum IMUIMessageType {
 }
 
 
-public enum IMUIMessageStatus {
+@objc public enum IMUIMessageStatus: UInt {
   // Sending message status
   case failed
   case sending
@@ -52,7 +52,10 @@ public protocol IMUIMessageDataSource {
  *  It implements `IMUIMessageModelProtocol` protocal
  *
  */
-open class IMUIMessageModel: IMUIMessageModelProtocol {
+open class IMUIMessageModel: NSObject, IMUIMessageModelProtocol {
+
+  @objc public var duration: CGFloat
+
   
   open var msgId = {
     return ""
@@ -147,6 +150,10 @@ open class IMUIMessageModel: IMUIMessageModelProtocol {
     self.status = status
     self.type = type
     self.messageStatus = messageStatus
+    
+    self.duration = 0.0
+    
+    super.init()
     
     if let layout = cellLayout {
       self.cellLayout = layout

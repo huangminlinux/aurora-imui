@@ -16,7 +16,17 @@ open class IMUIMessageCollectionView: UIView {
 
   var viewCache = IMUIReuseViewCache()
   
-  
+  // React Native Property ---->
+  var action: Array<Any> {
+    set {
+      print("\(newValue)")
+    }
+    
+    get {
+      return []
+    }
+  }
+  // React Native Property <----
   
   var chatDataManager = IMUIChatDataManager()
   open weak var delegate: IMUIMessageMessageCollectionViewDelegate?
@@ -25,6 +35,16 @@ open class IMUIMessageCollectionView: UIView {
     super.awakeFromNib()
   }
   
+  override init(frame: CGRect) {
+    super.init(frame: frame)
+    let bundle = Bundle.imuiBundle()
+    view = bundle.loadNibNamed("IMUIMessageCollectionView", owner: self, options: nil)?.first as! UIView
+    
+    self.addSubview(view)
+    view.frame = self.bounds
+    self.chatDataManager = IMUIChatDataManager()
+    self.setupMessageCollectionView()
+  }
   
   required public init?(coder aDecoder: NSCoder) {
     super.init(coder: aDecoder)
@@ -147,7 +167,7 @@ extension IMUIMessageCollectionView: UICollectionViewDelegate, UICollectionViewD
     let cell: IMUIMessageCellProtocal = collectionView.dequeueReusableCell(withReuseIdentifier: cellIdentify, for: indexPath) as! IMUIMessageCellProtocal
     
     cell.presentCell(with: messageModel, viewCache: viewCache, delegate: delegate)
-    self.delegate?.messageCollectionView(collectionView,
+    self.delegate?.messageCollectionView?(collectionView,
                                          willDisplayMessageCell: cell as! UICollectionViewCell,
                                          forItemAt: indexPath,
                                          model: messageModel)
@@ -159,20 +179,20 @@ extension IMUIMessageCollectionView: UICollectionViewDelegate, UICollectionViewD
                       didSelectItemAt indexPath: IndexPath) {
     let messageModel = self.chatDataManager[indexPath.item]
     
-    self.delegate?.messageCollectionView(collectionView, forItemAt: indexPath, model: messageModel)
+    self.delegate?.messageCollectionView?(collectionView, forItemAt: indexPath, model: messageModel)
   }
 
 
   public func collectionView(_ collectionView: UICollectionView, didEndDisplaying: UICollectionViewCell, forItemAt: IndexPath) {
     let messageModel = self.chatDataManager[forItemAt.item]
     (didEndDisplaying as! IMUIMessageCellProtocal).didDisAppearCell()
-    self.delegate?.messageCollectionView(collectionView, didEndDisplaying: didEndDisplaying, forItemAt: forItemAt, model: messageModel)
+    self.delegate?.messageCollectionView?(collectionView, didEndDisplaying: didEndDisplaying, forItemAt: forItemAt, model: messageModel)
   }
 }
 
 
 extension IMUIMessageCollectionView: UIScrollViewDelegate {
   public func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
-    self.delegate?.messageCollectionView(self.messageCollectionView)
+    self.delegate?.messageCollectionView?(self.messageCollectionView)
   }
 }

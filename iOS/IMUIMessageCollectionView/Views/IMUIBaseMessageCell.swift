@@ -131,15 +131,15 @@ class IMUIBaseMessageCell: UICollectionViewCell, IMUIMessageCellProtocal {
   }
   
   func tapBubbleView() {
-    self.delegate?.messageCollectionView(didTapMessageBubbleInCell: self, model: self.message!)
+    self.delegate?.messageCollectionView?(didTapMessageBubbleInCell: self, model: self.message!)
   }
   
   func tapHeaderImage() {
-    self.delegate?.messageCollectionView(didTapHeaderImageInCell: self, model: self.message!)
+    self.delegate?.messageCollectionView?(didTapHeaderImageInCell: self, model: self.message!)
   }
   
   func tapSatusView() {
-    self.delegate?.messageCollectionView(didTapStatusViewInCell: self, model: self.message!)
+    self.delegate?.messageCollectionView?(didTapStatusViewInCell: self, model: self.message!)
   }
   
   func didDisAppearCell() {

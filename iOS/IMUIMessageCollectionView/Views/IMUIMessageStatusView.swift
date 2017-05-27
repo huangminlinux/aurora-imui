@@ -10,7 +10,15 @@ import UIKit
 
 public class IMUIMessageDefaultStatusView: UIButton, IMUIMessageStatusViewProtocal {
 
-
+  public func layoutMediaDownloading() {
+    
+  }
+  
+  public func layoutMediaDownloadFail() {
+  
+  }
+  
+  public var statusViewID: String { return "" }
   
   var activityIndicator = UIActivityIndicatorView()
   

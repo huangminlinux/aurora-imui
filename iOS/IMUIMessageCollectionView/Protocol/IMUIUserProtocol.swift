@@ -12,7 +12,7 @@ import UIKit
  *  The `IMUIUserProtocol` protocol defines the common interface with user model objects
  *  It declares the required methods which model should implement it
  */
-public protocol IMUIUserProtocol {
+@objc public protocol IMUIUserProtocol: NSObjectProtocol {
   
   /**
    *  return user id, to identifies this user

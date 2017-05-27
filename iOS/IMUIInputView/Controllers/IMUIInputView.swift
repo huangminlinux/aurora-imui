@@ -20,8 +20,6 @@ enum IMUIInputStatus {
 fileprivate var IMUIFeatureViewHeight:CGFloat = 215
 fileprivate var IMUIShowFeatureViewAnimationDuration = 0.25
 
-
-
 open class IMUIInputView: UIView {
   
   var inputViewStatus: IMUIInputStatus = .none
@@ -42,6 +40,20 @@ open class IMUIInputView: UIView {
   @IBOutlet weak var cameraBtn: UIButton!
   @IBOutlet weak var sendBtn: UIButton!
   @IBOutlet weak var sendNumberLabel: UILabel!
+  
+  override public init(frame: CGRect) {
+    super.init(frame: frame)
+    let bundle = Bundle.imuiInputViewBundle()
+    view = bundle.loadNibNamed("IMUIInputView", owner: self, options: nil)?.first as! UIView
+    
+    self.addSubview(view)
+    view.frame = self.bounds
+    
+    inputTextView.textContainer.lineBreakMode = .byWordWrapping
+    inputTextView.delegate = self
+    self.featureView.delegate = self
+    print("fsad")
+  }
   
   open override func awakeFromNib() {
     super.awakeFromNib()
@@ -78,7 +90,7 @@ open class IMUIInputView: UIView {
     inputViewStatus = .microphone
     
     self.inputTextView.resignFirstResponder()
-    self.inputViewDelegate?.switchToMicrophoneMode(recordVoiceBtn: sender as! UIButton)
+    self.inputViewDelegate?.switchToMicrophoneMode?(recordVoiceBtn: sender as! UIButton)
     self.featureView.layoutFeature(with: .voice)
     self.showFeatureView()
   }
@@ -88,7 +100,7 @@ open class IMUIInputView: UIView {
     inputViewStatus = .photo
     
     inputTextView.resignFirstResponder()
-    inputViewDelegate?.switchToGalleryMode(photoBtn: sender as! UIButton)
+    inputViewDelegate?.switchToGalleryMode?(photoBtn: sender as! UIButton)
     self.featureView.layoutFeature(with: .gallery)
     self.showFeatureView()
   }
@@ -98,21 +110,21 @@ open class IMUIInputView: UIView {
     inputViewStatus = .camera
     
     inputTextView.resignFirstResponder()
-    inputViewDelegate?.switchToCameraMode(cameraBtn: sender as! UIButton)
+    inputViewDelegate?.switchToCameraMode?(cameraBtn: sender as! UIButton)
     self.featureView.layoutFeature(with: .camera)
     self.showFeatureView()
   }
 
   @IBAction func clickSendBtn(_ sender: Any) {
     if IMUIGalleryDataManager.selectedAssets.count > 0 {
-      self.inputViewDelegate?.didSeletedGallery(AssetArr: IMUIGalleryDataManager.selectedAssets)
+      self.inputViewDelegate?.didSeletedGallery?(AssetArr: IMUIGalleryDataManager.selectedAssets)
       self.featureView.clearAllSelectedGallery()
       self.updateSendBtnToPhotoSendStatus(with: 0)
       return
     }
     
     if inputTextView.text != "" {
-      inputViewDelegate?.sendTextMessage(self.inputTextView.text)
+      inputViewDelegate?.sendTextMessage?(self.inputTextView.text)
       inputTextView.text = ""
       fitTextViewSize(inputTextView)
     }

@@ -513,7 +513,7 @@ class IMUICameraCell: UICollectionViewCell, IMUIFeatureCellProtocal {
           }
         }
       }, completed: { [unowned self] photoCaptureDelegate in
-        self.inputViewDelegate?.didShootPicture(picture: photoCaptureDelegate.photoData!)
+        self.inputViewDelegate?.didShootPicture?(picture: photoCaptureDelegate.photoData!)
         self.sessionQueue.async { [unowned self] in
           self.inProgressPhotoCaptureDelegates[photoCaptureDelegate.requestedPhotoSettings.uniqueID] = nil
         }
@@ -557,7 +557,7 @@ class IMUICameraCell: UICollectionViewCell, IMUIFeatureCellProtocal {
       
       let imageData = AVCaptureStillImageOutput.jpegStillImageNSDataRepresentation(imageSampleBuffer)
       
-      self.inputViewDelegate?.didShootPicture(picture: imageData!)
+      self.inputViewDelegate?.didShootPicture?(picture: imageData!)
       let image = UIImage(data: imageData!)
       
       UIImageWriteToSavedPhotosAlbum(image!, nil, nil, nil)
@@ -594,7 +594,7 @@ extension IMUICameraCell: AVCaptureFileOutputRecordingDelegate {
   func capture(_ captureOutput: AVCaptureFileOutput!, didFinishRecordingToOutputFileAt outputFileURL: URL!, fromConnections connections: [Any]!, error: Error!) {
     if error == nil {
       if isActivity {
-        self.inputViewDelegate?.finishRecordVideo(videoPath: outputFileURL.path, durationTime: captureOutput.recordedDuration.seconds)
+        self.inputViewDelegate?.finishRecordVideo?(videoPath: outputFileURL.path, durationTime: captureOutput.recordedDuration.seconds)
       } else {
         let fileManager = FileManager()
         if fileManager.fileExists(atPath: outputFileURL.path) {

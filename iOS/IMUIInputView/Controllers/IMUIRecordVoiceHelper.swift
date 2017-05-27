@@ -137,7 +137,11 @@ class IMUIRecordVoiceHelper: NSObject {
   open func finishRecordingCompletion() -> (voiceFilePath: String, duration: TimeInterval){
     let duration = recordDuration
     self.stopRecord()
-    return (voiceFilePath: recordPath!, duration: duration)
+    if let _ = recordPath {
+      return (voiceFilePath: recordPath!, duration: duration)
+    } else {
+      return ("",0)
+    }
   }
   
   func cancelledDeleteWithCompletion() {

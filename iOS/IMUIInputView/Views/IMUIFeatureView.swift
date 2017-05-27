@@ -202,7 +202,7 @@ extension IMUIFeatureView: UICollectionViewDelegate, UICollectionViewDataSource 
     }
     var cell = collectionView.dequeueReusableCell(withReuseIdentifier: CellIdentifier, for: indexPath) as! IMUIFeatureCellProtocal
     cell.activateMedia()
-    cell.inputViewDelegate = self.inputViewDelegate!
+    cell.inputViewDelegate = self.inputViewDelegate
     return cell as! UICollectionViewCell
   }
   
