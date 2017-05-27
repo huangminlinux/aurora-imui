@@ -18,6 +18,10 @@
     "bugs": {
         "url": "https://github.com/jpush/jpush-react-native/issues"
     },
+    "files": [
+        "./iOS"
+        "./Android"
+    ],
     "homepage": "https://github.com/jpush/jpush-react-native#readme",
     "peerDependencies": {
         "jcore-react-native": ">= 1.0.0"
