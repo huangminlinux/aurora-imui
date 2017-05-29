@@ -7,7 +7,7 @@
 //
 #import <UIKit/UIKit.h>
 #import <React/RCTViewManager.h>
-#import "imuiDemo-Swift.h"
+#import <RNTAuroraIMUI/RNTAuroraIMUI-Swift.h>
 
 @interface IMUIInputViewManager : RCTViewManager
 

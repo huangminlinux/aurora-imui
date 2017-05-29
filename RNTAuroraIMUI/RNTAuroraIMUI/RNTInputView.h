@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "imuiDemo-Swift.h"
+#import <RNTAuroraIMUI/RNTAuroraIMUI-Swift.h>
 
 #import <React/RCTComponent.h>
 

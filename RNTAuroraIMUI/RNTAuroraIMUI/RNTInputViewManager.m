@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 #import <React/RCTViewManager.h>
 #import "RNTInputView.h"
-#import "imuiDemo-Swift.h"
+#import <RNTAuroraIMUI/RNTAuroraIMUI-Swift.h>
 
 @interface RNTInputViewManager : RCTViewManager <IMUIInputViewDelegate>
 

@@ -9,7 +9,7 @@
 #import "RNTMessageListView.h"
 #import <CoreGraphics/CoreGraphics.h>
 #import "RNTInputView.h"
-#import "imuiDemo-Swift.h"
+#import <RNTAuroraIMUI/RNTAuroraIMUI-Swift.h>
 
 @implementation RNTMessageListView
 

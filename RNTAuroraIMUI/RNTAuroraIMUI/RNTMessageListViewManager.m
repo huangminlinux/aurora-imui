@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import <React/RCTViewManager.h>
 #import "RNTMessageListView.h"
-#import "imuiDemo-Swift.h"
+#import <RNTAuroraIMUI/RNTAuroraIMUI-Swift.h>
 
 @interface RNTMessageListViewManager : RCTViewManager <IMUIMessageMessageCollectionViewDelegate>
 

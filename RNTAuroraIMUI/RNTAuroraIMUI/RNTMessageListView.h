@@ -6,7 +6,7 @@
 //  Copyright © 2017年 Facebook. All rights reserved.
 //
 
-#import "imuiDemo-Swift.h"
+#import <RNTAuroraIMUI/RNTAuroraIMUI-Swift.h>
 #import <UIKit/UIKit.h>
 
 #import <React/RCTComponent.h>

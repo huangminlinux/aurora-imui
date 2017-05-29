@@ -60,7 +60,7 @@ open class RNTMessageModel: IMUIMessageModel {
     super.init(msgId: msgId, messageStatus: messageStatus, fromUser: fromUser, isOutGoing: isOutGoing, date: date, status: status, type: type, cellLayout: layout)
   }
   
-  convenience init(messageDic: NSDictionary) {
+  open convenience init(messageDic: NSDictionary) {
     
     let msgId = messageDic.object(forKey: RNTMessageModel.kMsgKeyMsgId) as! String
     let msgTypeString = messageDic.object(forKey: RNTMessageModel.kMsgKeyMsgType) as? String
@@ -170,7 +170,7 @@ open class RNTMessageModel: IMUIMessageModel {
     return textSize
   }
   
-  var messageDictionary: NSDictionary {
+  open var messageDictionary: NSDictionary {
     get {
       
       var messageDic = NSMutableDictionary()
