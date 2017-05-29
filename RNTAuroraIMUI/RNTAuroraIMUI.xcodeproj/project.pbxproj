@@ -765,8 +765,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = HXHG.RNTAuroraIMUI;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
-				SWIFT_OBJC_BRIDGING_HEADER = "RNTAuroraIMUI-Bridging-Header.h";
-				SWIFT_VERSION = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -785,8 +785,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = HXHG.RNTAuroraIMUI;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
-				SWIFT_OBJC_BRIDGING_HEADER = "RNTAuroraIMUI-Bridging-Header.h";
-				SWIFT_VERSION = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
@@ -833,6 +833,7 @@
 				6260220D1ED96BA20038AB20 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		6260220E1ED96BA20038AB20 /* Build configuration list for PBXNativeTarget "RNTAuroraIMUITests" */ = {
 			isa = XCConfigurationList;
@@ -841,6 +842,7 @@
 				626022101ED96BA20038AB20 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
