@@ -170,7 +170,7 @@ open class RNTMessageModel: IMUIMessageModel {
     return textSize
   }
   
-  open var messageDictionary: NSDictionary {
+  public var messageDictionary: NSDictionary {
     get {
       
       var messageDic = NSMutableDictionary()
