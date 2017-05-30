@@ -753,7 +753,7 @@
 		6260220C1ED96BA20038AB20 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CODE_SIGN_IDENTITY = "";
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = RL64Y54S9V;
@@ -766,8 +766,6 @@
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-lc++",
-					"-ObjC",
-					"-all_load",
 					"-lRCTWebSocket",
 					"-lReact",
 				);
@@ -782,7 +780,7 @@
 		6260220D1ED96BA20038AB20 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CODE_SIGN_IDENTITY = "";
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = RL64Y54S9V;
@@ -795,8 +793,6 @@
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-lc++",
-					"-ObjC",
-					"-all_load",
 					"-lRCTWebSocket",
 					"-lReact",
 				);
