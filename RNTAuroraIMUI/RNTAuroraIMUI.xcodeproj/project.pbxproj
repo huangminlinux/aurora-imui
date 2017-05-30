@@ -753,6 +753,7 @@
 		6260220C1ED96BA20038AB20 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_IDENTITY = "";
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = RL64Y54S9V;
@@ -762,6 +763,14 @@
 				INFOPLIST_FILE = RNTAuroraIMUI/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-lc++",
+					"-ObjC",
+					"-all_load",
+					"-lRCTWebSocket",
+					"-lReact",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = HXHG.RNTAuroraIMUI;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -773,6 +782,7 @@
 		6260220D1ED96BA20038AB20 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_IDENTITY = "";
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = RL64Y54S9V;
@@ -782,6 +792,14 @@
 				INFOPLIST_FILE = RNTAuroraIMUI/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-lc++",
+					"-ObjC",
+					"-all_load",
+					"-lRCTWebSocket",
+					"-lReact",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = HXHG.RNTAuroraIMUI;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
