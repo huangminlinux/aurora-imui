@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6239E66D1EDDB20900B9AC9C /* RNTInputViewManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 626023581ED97D360038AB20 /* RNTInputViewManager.m */; };
+		6239E66E1EDDB20900B9AC9C /* RNTMessageListViewManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 6260235C1ED97D360038AB20 /* RNTMessageListViewManager.m */; };
 		626022011ED96BA20038AB20 /* RNTAuroraIMUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 626021F71ED96BA20038AB20 /* RNTAuroraIMUI.framework */; };
 		626022061ED96BA20038AB20 /* RNTAuroraIMUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 626022051ED96BA20038AB20 /* RNTAuroraIMUITests.m */; };
 		626022081ED96BA20038AB20 /* RNTAuroraIMUI.h in Headers */ = {isa = PBXBuildFile; fileRef = 626021FA1ED96BA20038AB20 /* RNTAuroraIMUI.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -95,7 +97,20 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		6239E6621EDDB1F700B9AC9C /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "include/$(PRODUCT_NAME)";
+			dstSubfolderSpec = 16;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		6239E6641EDDB1F700B9AC9C /* libAuroraIMUI.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libAuroraIMUI.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		626021F71ED96BA20038AB20 /* RNTAuroraIMUI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = RNTAuroraIMUI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		626021FA1ED96BA20038AB20 /* RNTAuroraIMUI.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RNTAuroraIMUI.h; sourceTree = "<group>"; };
 		626021FB1ED96BA20038AB20 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -179,6 +194,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		6239E6611EDDB1F700B9AC9C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		626021F31ED96BA20038AB20 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -197,11 +219,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6239E6651EDDB1F700B9AC9C /* AuroraIMUI */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = AuroraIMUI;
+			sourceTree = "<group>";
+		};
 		626021ED1ED96BA20038AB20 = {
 			isa = PBXGroup;
 			children = (
 				626021F91ED96BA20038AB20 /* RNTAuroraIMUI */,
 				626022041ED96BA20038AB20 /* RNTAuroraIMUITests */,
+				6239E6651EDDB1F700B9AC9C /* AuroraIMUI */,
 				626021F81ED96BA20038AB20 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -211,6 +241,7 @@
 			children = (
 				626021F71ED96BA20038AB20 /* RNTAuroraIMUI.framework */,
 				626022001ED96BA20038AB20 /* RNTAuroraIMUITests.xctest */,
+				6239E6641EDDB1F700B9AC9C /* libAuroraIMUI.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -465,6 +496,23 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
+		6239E6631EDDB1F700B9AC9C /* AuroraIMUI */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6239E66A1EDDB1F700B9AC9C /* Build configuration list for PBXNativeTarget "AuroraIMUI" */;
+			buildPhases = (
+				6239E6601EDDB1F700B9AC9C /* Sources */,
+				6239E6611EDDB1F700B9AC9C /* Frameworks */,
+				6239E6621EDDB1F700B9AC9C /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = AuroraIMUI;
+			productName = AuroraIMUI;
+			productReference = 6239E6641EDDB1F700B9AC9C /* libAuroraIMUI.a */;
+			productType = "com.apple.product-type.library.static";
+		};
 		626021F61ED96BA20038AB20 /* RNTAuroraIMUI */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 6260220B1ED96BA20038AB20 /* Build configuration list for PBXNativeTarget "RNTAuroraIMUI" */;
@@ -510,6 +558,11 @@
 				LastUpgradeCheck = 0830;
 				ORGANIZATIONNAME = HXHG;
 				TargetAttributes = {
+					6239E6631EDDB1F700B9AC9C = {
+						CreatedOnToolsVersion = 8.3.2;
+						DevelopmentTeam = RL64Y54S9V;
+						ProvisioningStyle = Automatic;
+					};
 					626021F61ED96BA20038AB20 = {
 						CreatedOnToolsVersion = 8.3.2;
 						DevelopmentTeam = RL64Y54S9V;
@@ -536,6 +589,7 @@
 			targets = (
 				626021F61ED96BA20038AB20 /* RNTAuroraIMUI */,
 				626021FF1ED96BA20038AB20 /* RNTAuroraIMUITests */,
+				6239E6631EDDB1F700B9AC9C /* AuroraIMUI */,
 			);
 		};
 /* End PBXProject section */
@@ -571,6 +625,15 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		6239E6601EDDB1F700B9AC9C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6239E66D1EDDB20900B9AC9C /* RNTInputViewManager.m in Sources */,
+				6239E66E1EDDB20900B9AC9C /* RNTMessageListViewManager.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		626021F21ED96BA20038AB20 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -652,6 +715,26 @@
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
+		6239E66B1EDDB1F700B9AC9C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEVELOPMENT_TEAM = RL64Y54S9V;
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		6239E66C1EDDB1F700B9AC9C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEVELOPMENT_TEAM = RL64Y54S9V;
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
 		626022091ED96BA20038AB20 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -831,6 +914,14 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		6239E66A1EDDB1F700B9AC9C /* Build configuration list for PBXNativeTarget "AuroraIMUI" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6239E66B1EDDB1F700B9AC9C /* Debug */,
+				6239E66C1EDDB1F700B9AC9C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
 		626021F11ED96BA20038AB20 /* Build configuration list for PBXProject "RNTAuroraIMUI" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
