@@ -16,4 +16,19 @@
 @property(assign, nonatomic)BOOL action;
 @property (nonatomic, copy) RCTBubblingEventBlock onEventCallBack;
 
+@property (nonatomic, copy) RCTBubblingEventBlock onSendText;
+@property (nonatomic, copy) RCTBubblingEventBlock onTakePicture;
+@property (nonatomic, copy) RCTBubblingEventBlock onStartRecordVoice;
+@property (nonatomic, copy) RCTBubblingEventBlock onFinishRecordVoice;
+@property (nonatomic, copy) RCTBubblingEventBlock onCancelRecordVoice;
+
+@property (nonatomic, copy) RCTBubblingEventBlock onStartRecordVideo;
+@property (nonatomic, copy) RCTBubblingEventBlock onFinishRecordVideo;
+@property (nonatomic, copy) RCTBubblingEventBlock onSendGalleryFiles;
+
+@property (nonatomic, copy) RCTBubblingEventBlock onSwitchToMicrophoneMode;
+@property (nonatomic, copy) RCTBubblingEventBlock onSwitchToGalleryMode;
+@property (nonatomic, copy) RCTBubblingEventBlock onSwitchToCameraMode;
+
+@property (nonatomic, copy) RCTBubblingEventBlock onShowKeyboard;
 @end

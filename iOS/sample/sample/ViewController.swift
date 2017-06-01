@@ -33,6 +33,12 @@ class ViewController: UIViewController {
     super.didReceiveMemoryWarning()
   }
   
+  @IBAction func onClick(_ sender: Any) {
+    var message = messageCollectionView[messageCollectionView.messageCount - 1];
+    var mymessage = MyMessageModel(text: "fasdfasdfas", isOutGoing: true)
+    mymessage.msgId = message.msgId
+    messageCollectionView.updateMessage(with: mymessage)
+  }
 }
 
 

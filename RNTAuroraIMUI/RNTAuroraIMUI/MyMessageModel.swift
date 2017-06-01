@@ -66,13 +66,12 @@ open class RNTMessageModel: IMUIMessageModel {
     let msgTypeString = messageDic.object(forKey: RNTMessageModel.kMsgKeyMsgType) as? String
     let statusString = messageDic.object(forKey: RNTMessageModel.kMsgKeyStatus) as? String
     let isOutgoing = messageDic.object(forKey: RNTMessageModel.kMsgKeyisOutgoing) as? Bool
-    let messageText = messageDic.object(forKey: RNTMessageModel.kMsgKeyText) as? String
     
-    var mediaFilePath = messageDic.object(forKey: RNTMessageModel.kMsgKeyMediaFilePath) as? String
-    if let _ = mediaFilePath {
+    var mediaPath = messageDic.object(forKey: RNTMessageModel.kMsgKeyMediaFilePath) as? String
+    if let _ = mediaPath {
       
     } else {
-      mediaFilePath = ""
+      mediaPath = ""
     }
     
     var text = messageDic.object(forKey: RNTMessageModel.kMsgKeyText) as? String
@@ -102,6 +101,7 @@ open class RNTMessageModel: IMUIMessageModel {
       }
       
       if typeString == RNTMessageModel.kMsgTypeVoice {
+        
         msgType = .voice
       }
       
@@ -135,7 +135,7 @@ open class RNTMessageModel: IMUIMessageModel {
       
     }
     
-    self.init(msgId: msgId, messageStatus: msgStatus, fromUser: user, isOutGoing: isOutgoing!, date: Date(), status: msgStatus, type: msgType!, text: text!, mediaPath: mediaFilePath!, layout:  textLayout)
+    self.init(msgId: msgId, messageStatus: msgStatus, fromUser: user, isOutGoing: isOutgoing!, date: Date(), status: msgStatus, type: msgType!, text: text!, mediaPath: mediaPath!, layout:  textLayout)
 
   }
   

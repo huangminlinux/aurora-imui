@@ -15,5 +15,11 @@
 @interface RNTMessageListView : UIView
 @property (weak, nonatomic) IBOutlet IMUIMessageCollectionView *messageList;
 @property(assign, nonatomic)BOOL action;
-@property (nonatomic, copy) RCTBubblingEventBlock onEventCallBack;
+//@property (nonatomic, copy) RCTBubblingEventBlock onEventCallBack;
+@property (nonatomic, copy) RCTBubblingEventBlock onAvatarClick;
+@property (nonatomic, copy) RCTBubblingEventBlock onMsgClick;
+@property (nonatomic, copy) RCTBubblingEventBlock onStatusViewClick;
+
+@property (nonatomic, copy) RCTBubblingEventBlock onBeginDragMessageList;
+
 @end
