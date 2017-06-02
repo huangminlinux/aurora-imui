@@ -49,4 +49,8 @@ RCT_EXPORT_METHOD(scrollToBottom:(BOOL) animate) {
   [[NSNotificationCenter defaultCenter] postNotificationName:kScrollToBottom object: @(animate)];
 }
 
+RCT_EXPORT_METHOD(hidenFeatureView:(BOOL) animate) {
+  [[NSNotificationCenter defaultCenter] postNotificationName:kHidenFeatureView object: @(animate)];
+}
+
 @end

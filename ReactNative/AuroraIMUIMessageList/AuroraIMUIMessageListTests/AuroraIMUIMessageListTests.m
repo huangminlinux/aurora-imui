@@ -1,18 +1,18 @@
 //
-//  RNTAuroraIMUITests.m
-//  RNTAuroraIMUITests
+//  AuroraIMUIMessageListTests.m
+//  AuroraIMUIMessageListTests
 //
-//  Created by oshumini on 2017/5/27.
+//  Created by oshumini on 2017/6/2.
 //  Copyright © 2017年 HXHG. All rights reserved.
 //
 
 #import <XCTest/XCTest.h>
 
-@interface RNTAuroraIMUITests : XCTestCase
+@interface AuroraIMUIMessageListTests : XCTestCase
 
 @end
 
-@implementation RNTAuroraIMUITests
+@implementation AuroraIMUIMessageListTests
 
 - (void)setUp {
     [super setUp];
