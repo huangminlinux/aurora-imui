@@ -90,9 +90,18 @@ open class IMUIInputView: UIView {
     inputViewStatus = .microphone
     
     self.inputTextView.resignFirstResponder()
+    
     self.inputViewDelegate?.switchToMicrophoneMode?(recordVoiceBtn: sender as! UIButton)
-    self.featureView.layoutFeature(with: .voice)
-    self.showFeatureView()
+    
+    let serialQueue = DispatchQueue(label: "inputview")
+    serialQueue.async {
+      usleep(10000)
+      DispatchQueue.main.async {
+        self.featureView.layoutFeature(with: .voice)
+        self.showFeatureView()
+        NSLog("huangmin onSwitch to mic 2")
+      }
+    }
   }
   
   @IBAction func clickPhotoBtn(_ sender: Any) {
@@ -101,7 +110,9 @@ open class IMUIInputView: UIView {
     
     inputTextView.resignFirstResponder()
     inputViewDelegate?.switchToGalleryMode?(photoBtn: sender as! UIButton)
-    self.featureView.layoutFeature(with: .gallery)
+    DispatchQueue.main.async {
+      self.featureView.layoutFeature(with: .gallery)
+    }
     self.showFeatureView()
   }
   
@@ -111,7 +122,9 @@ open class IMUIInputView: UIView {
     
     inputTextView.resignFirstResponder()
     inputViewDelegate?.switchToCameraMode?(cameraBtn: sender as! UIButton)
-    self.featureView.layoutFeature(with: .camera)
+    DispatchQueue.main.async {
+      self.featureView.layoutFeature(with: .camera)
+    }
     self.showFeatureView()
   }
 
@@ -142,9 +155,9 @@ open class IMUIInputView: UIView {
     let duration = Double(dic.object(forKey: UIKeyboardAnimationDurationUserInfoKey) as! NSNumber)
     
     UIView.animate(withDuration: duration) {
-
     if bottomDistance > 10.0 {
       IMUIFeatureViewHeight = bottomDistance
+      self.inputViewDelegate?.keyBoardWillShow?(height: keyboardValue.cgRectValue.size.height, durationTime: duration)
       self.moreViewHeight.constant = IMUIFeatureViewHeight
     }
       self.superview?.layoutIfNeeded()

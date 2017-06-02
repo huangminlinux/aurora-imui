@@ -37,8 +37,8 @@ class IMUIChatDataManager: NSObject {
     allMessageDic.removeAll()
   }
   
-  func index(of message: IMUIMessageModel) -> Int {
-    return allMsgidArr.index(of: message.msgId)!
+  func index(of message: IMUIMessageModel) -> Int? {
+    return allMsgidArr.index(of: message.msgId)
   }
   
   open func appendMessage(with message: IMUIMessageModel) {

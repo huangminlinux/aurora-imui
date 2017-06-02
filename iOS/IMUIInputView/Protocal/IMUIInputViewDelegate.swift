@@ -69,6 +69,8 @@ import Photos
    *  Tells the delegate when user did shoot video in camera mode
    */
   @objc optional func finishRecordVideo(videoPath: String, durationTime: Double)
+  
+  @objc optional func keyBoardWillShow(height: CGFloat, durationTime: Double)
 }
 
 

@@ -68,7 +68,8 @@ open class IMUIMessageCollectionView: UIView {
     self.messageCollectionView.delegate = self
     self.messageCollectionView.dataSource = self
     
-    self.messageCollectionView.register(IMUITextMessageCell.self, forCellWithReuseIdentifier: IMUITextMessageCell.self.description())
+//    self.messageCollectionView.register(IMUITextMessageCell.self, forCellWithReuseIdentifier: IMUITextMessageCell.self.description())
+    self.messageCollectionView.register(IMUITextMessageCell.self, forCellWithReuseIdentifier: "messageText")
     self.messageCollectionView.register(IMUIImageMessageCell.self, forCellWithReuseIdentifier: IMUIImageMessageCell.self.description())
     self.messageCollectionView.register(IMUIVoiceMessageCell.self, forCellWithReuseIdentifier: IMUIVoiceMessageCell.self.description())
     self.messageCollectionView.register(IMUIVideoMessageCell.self, forCellWithReuseIdentifier: IMUIVideoMessageCell.self.description())
@@ -89,6 +90,7 @@ open class IMUIMessageCollectionView: UIView {
   }
   
   open func scrollToBottom(with animated: Bool) {
+    if chatDataManager.count == 0 { return }
     let endIndex = IndexPath(item: chatDataManager.endIndex - 1, section: 0)
     self.messageCollectionView.scrollToItem(at: endIndex, at: .bottom, animated: animated)
   }
@@ -111,9 +113,10 @@ open class IMUIMessageCollectionView: UIView {
   
   open func updateMessage(with message:IMUIMessageModel) {
     self.chatDataManager.updateMessage(with: message)
-    let index = chatDataManager.index(of: message)
-    let indexPath = IndexPath(item: index, section: 0)
-    self.messageCollectionView.reloadItems(at: [indexPath])
+    if let index = chatDataManager.index(of: message) {
+      let indexPath = IndexPath(item: index, section: 0)
+      self.messageCollectionView.reloadItems(at: [indexPath])
+    }
   }
 }
 
@@ -149,7 +152,8 @@ extension IMUIMessageCollectionView: UICollectionViewDelegate, UICollectionViewD
     
     switch messageModel.type {
     case .text:
-      cellIdentify = IMUITextMessageCell.self.description()
+//      cellIdentify = IMUITextMessageCell.self.description()
+      cellIdentify = "messageText"
       break
     case .image:
       cellIdentify = IMUIImageMessageCell.self.description()
