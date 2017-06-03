@@ -1,12 +1,12 @@
 {
     "name": "testhm1",
-    "version": "1.6.34",
+    "version": "1.6.40",
     "description": "a imui plugin for react native application",
     "main": "index.js",
 
     "repository": {
         "type": "git",
-        "url": "git@github.com:huangminlinux/aurora-imui.git"
+        "url": "git@github.com:jpush/aurora-imui.git"
     },
     "keywords": [
         "react",
@@ -22,8 +22,7 @@
         "iOS/IMUICommon",
         "iOS/IMUIInputView",
         "iOS/IMUIMessageCollectionView",
-        "ReactNative/*",
-        "Android/"
+        "ReactNative/"
     ],
     "homepage": "https://github.com/jpush/jpush-react-native#readme",
     "rnpm": {
