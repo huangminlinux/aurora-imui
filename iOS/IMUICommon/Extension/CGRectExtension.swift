@@ -7,6 +7,8 @@
 //
 
 import Foundation
+import UIKit
+
 extension CGRect {
   var right: CGFloat {
     return self.origin.x + self.size.width
